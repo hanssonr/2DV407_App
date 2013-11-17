@@ -1,20 +1,30 @@
-var app = app || {};
+define(["backbone", "mainview", "editview"], function(Backbone, MainView, EditView) {
 
-app.router = Backbone.Router.extend({
+	var Router = Backbone.Router.extend({
 
-	initialize: function(opt) {
-		console.log("> router initialized");
-		this.el = opt.el;
-	},
+		initialize: function(opt) {
+			console.log("> router initialized");
+			this.el = opt.el;
+		},
 
-	routes: {
-		"": "index"
-	},
+		routes: {
+			"": "index",
+			"edit": "edit"
+		},
 
-	index: function() {
-		var view = new app.mainView();
-		this.el.empty();
-		this.el.append(view.render().el);
-	}
+		index: function() {
+			console.log("here we are");
+			var view = new MainView();
+			this.el.empty();
+			this.el.append(view.render().el);
+		},
 
+		edit: function() {
+			var view = new EditView();
+			this.el.empty();
+			this.el.append(view.render().el);
+		}
+	});
+
+	return Router;
 });

@@ -16,19 +16,12 @@
   	<h2> There are {{ count }} goals</h2>
   </script>
 
-  <!-- js libs -->
-  <script src="js/libs/jquery.js"></script>
-  <script src="js/libs/underscore.js"></script>
-  <script src="js/libs/mustache.js"></script>
-  <script src="js/libs/bootstrap.js"></script>
-  <!-- <script src="js/libs/require.js"></script> -->
-  <script src="js/libs/backbone.js"></script>
-  <script src="js/libs/backbone.localStorage.js"></script>
+  <script type="text/x-mustache-template" id="edit-template">
+  	<h2> Welcome to {{ name }} page!</h2>
+  </script>
 
-  <!-- my files -->
-  <script src="js/main.js"></script>
-  <script src="js/routers/router.js"></script>
-  <script src="js/views/mainView.js"></script>
-  <script>$(function() {app.run($("#main"));});</script>
+  <!-- js libs -->
+  <script data-main="js/main" src="js/libs/require.js"></script>
+
 </body>
 </html>

@@ -1,25 +1,22 @@
-var app = app || {};
+define(["backbone", "mustache"], function(Backbone, Mustache){
 
-// Helper for compiling mustache-template
-var template = function(name) {
-	return Mustache.compile($("#" + name + "-template").html());
-};
+	var MainView = Backbone.View.extend({
 
-app.mainView = Backbone.View.extend({
+		template: Mustache.compile($("#" + "main" + "-template").html()),
 
-	template: template("main"),
+		initialize: function() {
+			console.log("> mainView initialized");
+		},
 
-	initialize: function() {
-		console.log("> view initialized");
-	},
+		render: function() {
+			this.$el.html(this.template(this));
+			return this;
+		},
 
-	render: function() {
-		this.$el.html(this.template(this));
-		return this;
-	},
-
-	// View helpers for populating templates
-	count: function() {
-		return 1;
-	}
+		// View helpers for populating templates
+		count: function() {
+			return 1;
+		}
+	});
+	return MainView;
 });
