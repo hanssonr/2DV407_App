@@ -3,8 +3,10 @@ define(["backbone", "mustache"], function(Backbone, Mustache) {
 	var EditView = Backbone.View.extend({
 		template: Mustache.compile($("#" + "edit" + "-template").html()),
 
-		initialize: function() {
+		initialize: function(goalId) {
 			console.log("> editView initialized");
+
+			this.goalId = 1;
 		},
 
 		render: function() {
@@ -13,10 +15,10 @@ define(["backbone", "mustache"], function(Backbone, Mustache) {
 		},
 
 		// View helpers for populating templates
-		name: function() {
-			return "edit";
-		}
+		name: function() { return "edit"; },
+		id: function() { return this.goalId; }
 	});
 
 	return EditView;
+
 });

@@ -2,22 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>NON ZERO INITIATIVE</title>
   <meta name="description" content="">
   <link href="assets/css/bootstrap.css" rel="stylesheet">
 </head>
 <body>
 
-  <div id ="main">
+	<div class="container">
+
+		<div id="header">
+			<div class="hero-unit">
+				<h1>NON ZERO INITIATIVE</h1>
+			</div>
+		</div>
+
+  	<div id ="main">
+  		
+  	</div>
+
   </div>
 
   <!-- Templating goes here for now-->
-  <script type="text/x-mustache-template" id="main-template">
+  <script type="text/x-mustache-template" id="index-template">
   	<h2> There are {{ count }} goals</h2>
+  	<div class="addGoal"></div>
+  	<div class="goals"></div>
   </script>
 
   <script type="text/x-mustache-template" id="edit-template">
-  	<h2> Welcome to {{ name }} page!</h2>
+  	<h2> Welcome to {{ id }} page!</h2>
+  </script>
+
+  <script type="text/x-mustache-template" id="goal-form-template">
+  	<div class='control-group'>
+
+  		<label class='control-label' for='name'>Name of goal</label>
+  			<div class='controls'>
+              <input type='text' class='input-xlarge' id='name'>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Add NZI-Goal</button>
+        </div>
+  </script>
+  
+  <script type="text/x-mustache-template" id="goal-template">
+  	<h2>{{ name }}</h2>
+  	<p>Number of non-zero days so far: {{ days }}</p>
+  	<button class="btn btn-success">+ Add day</button>
+  	<button class="btn btn-primary">- Edit</button>
+  	<button class="btn btn-danger" id="delete">x Delete</button>
   </script>
 
   <!-- js libs -->

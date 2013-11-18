@@ -8,8 +8,13 @@ require.config({
 		"mustache": "libs/mustache",
 		"underscore": "libs/underscore",
 		"router": "routers/router",
-		"mainview": "views/mainView",
-		"editview": "views/editView"
+		"indexview": "views/indexView",
+		"editview": "views/editView",
+		"addgoalview": "views/addGoalView",
+		"goalsview": "views/goalsView",
+		"goalview": "views/goalView",
+		"goal": "models/goal",
+		"goals": "collections/goals"
 	},
 
 	shim: {

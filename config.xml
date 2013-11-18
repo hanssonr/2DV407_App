@@ -3,12 +3,12 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "nu.somfan.nzi"
         versionCode="10"
-        version   = "1.0.0">
+        version   = "1.0.1">
 
     <gap:platform name="android" />
     <!-- versionCode is optional and Android only -->
 
-    <name>NZI test</name>
+    <name>NON ZERO INITIATIVE</name>
 
     <description>
         Short description
