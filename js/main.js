@@ -1,5 +1,6 @@
 // Require config
 require.config({
+	baseUrl: "js/",
 	paths: {
 		"jquery": "libs/jquery-2.0.3.min",
 		"backbone": "libs/backbone",
