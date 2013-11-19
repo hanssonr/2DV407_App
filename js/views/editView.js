@@ -4,8 +4,6 @@ define(["backbone", "mustache"], function(Backbone, Mustache) {
 		template: Mustache.compile($("#" + "edit" + "-template").html()),
 
 		initialize: function(goalId) {
-			console.log("> editView initialized");
-
 			this.goalId = 1;
 		},
 

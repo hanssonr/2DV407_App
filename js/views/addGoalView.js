@@ -1,34 +1,52 @@
-define(["backbone", "mustache"], function(Backbone, Mustache){
+define(["backbone", "mustache", "goal", "backbone-validation"], function(Backbone, Mustache, Goal){
 
 	var AddGoalView = Backbone.View.extend({
 
 		tagName: "form",
-		className: "form",
+		className: "form-horizontal",
 		template: Mustache.compile($("#" + "goal-form" + "-template").html()),
 
 		initialize: function() {
-			console.log("> AddGoalView initialized");
+
 		},
-		
+
 		events: {
 			"submit": "submit"
 		},
 
 		render: function() {
-			console.log("> render");
+			// Binding the validation to this view
+			Backbone.Validation.bind(this, {
+				valid: function(view, attr) {
+					var $el = view.$("[name=" + attr + "]"),
+						$group = $el.closest(".form-group");
+
+					$group.removeClass("has-error");
+					$group.find(".help-block").html("").addClass("hidden");
+				},
+				invalid: function(view, attr, error) {
+					var $el = view.$("[name=" + attr + "]"),
+						$group = $el.closest(".form-group");
+
+					$group.addClass("has-error");
+					$group.find(".help-block").html(error).removeClass("hidden");
+
+				}
+			});
+
 			this.$el.html(this.template(this));
 			return this;
 		},
-		
+
 		// Callbacks from events
 		submit: function(event) {
 			event.preventDefault();
-			
-			this.collection.create({
-				name: this.$("input#name").val()
-			});
-			
-			console.log("> submit pressed with " + "name: " + this.$("input#name").val());
+
+			this.model.setName(this.$("input#name").val());
+
+			if(this.model.isValid(true)) {
+				this.collection.create(this.model);
+			}
 		},
 	});
 

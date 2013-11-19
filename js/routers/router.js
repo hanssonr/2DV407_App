@@ -3,7 +3,6 @@ define(["backbone", "indexview", "editview", "backbone.localStorage"], function(
 	var Router = Backbone.Router.extend({
 
 		initialize: function(opt) {
-			console.log("> router initialized");
 			this.el = opt.el;
 		},
 
@@ -13,7 +12,6 @@ define(["backbone", "indexview", "editview", "backbone.localStorage"], function(
 		},
 
 		index: function() {
-			console.log("here we are");
 			var view = new IndexView();
 			this.el.empty();
 			this.el.append(view.render().el);

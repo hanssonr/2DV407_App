@@ -6,19 +6,22 @@
   <meta name="description" content="">
   <link href="assets/css/bootstrap.css" rel="stylesheet">
 </head>
+
 <body>
 
 	<div class="container">
 
-		<div id="header">
-			<div class="hero-unit">
-				<h1>NON ZERO INITIATIVE</h1>
-			</div>
+		<div class="header">
+			<h3 class="text-muted">Just chillin</h3>
 		</div>
 
-  	<div id ="main">
-  		
-  	</div>
+		<div class="hero-unit">
+			<h1>NON ZERO INITIATIVE</h1>
+		</div>
+
+  		<div id ="main">
+
+  		</div>
 
   </div>
 
@@ -34,23 +37,26 @@
   </script>
 
   <script type="text/x-mustache-template" id="goal-form-template">
-  	<div class='control-group'>
 
-  		<label class='control-label' for='name'>Name of goal</label>
-  			<div class='controls'>
-              <input type='text' class='input-xlarge' id='name'>
-            </div>
-        </div>
 
-        <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Add NZI-Goal</button>
+  	<div class='form-group has-success'>
+  		<label for='name' class='control-label'>Name of goal</label>
+  		<input type='text' class='form-control input-xlarge' id='name' name='name'>
+  		<span class='help-block hidden'></span>
+  	</div>
+
+  	<div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+            <button type="submit" id="addButton" class="btn btn-success">Add non-zero goal</button>
         </div>
+    </div>
+
   </script>
-  
+
   <script type="text/x-mustache-template" id="goal-template">
   	<h2>{{ name }}</h2>
   	<p>Number of non-zero days so far: {{ days }}</p>
-  	<button class="btn btn-success">+ Add day</button>
+  	<button class="btn btn-success" id="add-day">+ Add day</button>
   	<button class="btn btn-primary">- Edit</button>
   	<button class="btn btn-danger" id="delete">x Delete</button>
   </script>

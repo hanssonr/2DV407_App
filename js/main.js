@@ -5,6 +5,7 @@ require.config({
 		"jquery": "libs/jquery-2.0.3.min",
 		"backbone": "libs/backbone",
 		"backbone.localStorage": "libs/backbone.localStorage",
+		"backbone-validation": "libs/backbone-validation-amd-min",
 		"bootstrap": "libs/bootstrap",
 		"mustache": "libs/mustache",
 		"underscore": "libs/underscore",
@@ -33,7 +34,6 @@ require(["jquery", "router", "backbone", "underscore"], function($, Router, Back
 
 	$(function() {
 
-		console.log("> main initialized");
 		var container = $("#main");
 		var router = new Router({el: container});
 		Backbone.history.start();

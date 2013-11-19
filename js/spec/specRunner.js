@@ -5,6 +5,7 @@ require.config({
 		"jquery": "libs/jquery-2.0.3.min",
 		"backbone": "libs/backbone",
 		"backbone.localStorage": "libs/backbone.localStorage",
+		"backbone-validation": "libs/backbone-validation-amd-min",
 		"bootstrap": "libs/bootstrap",
 		"mustache": "libs/mustache",
 		"underscore": "libs/underscore",
@@ -40,21 +41,21 @@ require.config({
 });
 
 require(['underscore', 'jquery', 'jasmine-html'], function(_, $, jasmine){
-	
+
 	var jasmineEnv = jasmine.getEnv();
 	jasmineEnv.updateInterval = 1000;
-	
+
 	var htmlReporter = new jasmine.HtmlReporter();
 	jasmineEnv.addReporter(htmlReporter);
-	
+
 	jasmineEnv.specFilter = function(spec) {
 		return htmlReporter.specFilter(spec);
 	};
-	
+
 	var specs = [];
 
 	specs.push('spec/models/goalSpec');
- 
+
 	$(function(){
 		require(specs, function(){
 			jasmineEnv.execute();
