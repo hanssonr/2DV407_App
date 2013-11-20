@@ -28,7 +28,7 @@ define(["goal", "jasmine", "backbone", "backbone-validation"], function(Goal, ja
 
 			expect(errorArgs).toBeDefined();
 			expect(errorArgs[0]).toBe(goal);
-			expect(errorArgs[1].name).toBe("Please enter valid characters (a-zåäöA-ZÅÄÖ 1-9)");
+			expect(errorArgs[1].name).toBe("Please enter valid characters (a-zåäöA-ZÅÄÖ0-9)");
 		});
 
 	});

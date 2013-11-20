@@ -6,6 +6,7 @@ require.config({
 		"backbone": "libs/backbone",
 		"backbone.localStorage": "libs/backbone.localStorage",
 		"backbone-validation": "libs/backbone-validation-amd-min",
+		"backbone.rel": "libs/backbone.rel",
 		"bootstrap": "libs/bootstrap",
 		"mustache": "libs/mustache",
 		"underscore": "libs/underscore",
