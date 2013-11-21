@@ -5,7 +5,7 @@ define(["backbone", "mustache"], function(Backbone, Mustache) {
 		template: Mustache.compile($("#" + "goal" + "-template").html()),
 
 		initialize: function() {
-
+			// this.el = $("#listGoalsTemplate");
 		},
 
 		events: {

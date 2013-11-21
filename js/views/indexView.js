@@ -5,6 +5,7 @@ define(["backbone", "mustache", "goals", "addgoalview", "goalsview", "goal"], fu
 		template: Mustache.compile($("#" + "index" + "-template").html()),
 
 		initialize: function() {
+
 			// The collection
 			this.goals = new Goals();
 			this.goals.on("sync", this.render, this);
