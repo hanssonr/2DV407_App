@@ -1,8 +1,8 @@
-define(["backbone", "mustache", "goals", "addgoalview", "goalsview", "goal"], function(Backbone, Mustache, Goals, AddGoalView, GoalsView, Goal) {
+define(["backbone", "mustache", "goals", "addgoalview", "goalsview", "goal", "text!templates/indexTemplate.html"], function(Backbone, Mustache, Goals, AddGoalView, GoalsView, Goal, indexTemplate) {
 
 	var IndexView = Backbone.View.extend({
 
-		template: Mustache.compile($("#" + "index" + "-template").html()),
+		template: Mustache.compile( indexTemplate ),
 
 		initialize: function() {
 
@@ -12,6 +12,15 @@ define(["backbone", "mustache", "goals", "addgoalview", "goalsview", "goal"], fu
 			this.goals.on("change", this.render, this);
 			this.goals.on("destroy", this.render, this);
 			this.goals.fetch();
+
+			// Subcollection
+			this.goals.each(function(goal) {
+				goal.days.on("sync", this.render, this);
+				goal.days.on("change", this.render, this);
+				goal.days.on("destroy", this.render, this);
+				goal.days.fetch();
+			}, this);
+
 		},
 
 		render: function() {

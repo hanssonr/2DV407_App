@@ -1,10 +1,10 @@
-define(["backbone", "mustache", "goal", "backbone-validation"], function(Backbone, Mustache, Goal){
+define(["backbone", "mustache", "goal", "text!templates/goalFormTemplate.html"], function(Backbone, Mustache, Goal, goalFormTemplate){
 
 	var AddGoalView = Backbone.View.extend({
 
 		tagName: "form",
 		className: "form-horizontal",
-		template: Mustache.compile($("#" + "goal-form" + "-template").html()),
+		template: Mustache.compile(goalFormTemplate),
 
 		initialize: function() {
 
