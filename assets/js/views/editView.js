@@ -23,7 +23,7 @@ define(["backbone", "mustache", "goals", "goal", "daysview", "text!templates/edi
 
 		// View helpers for populating templates
 		name: function() { return "edit"; },
-		id: function() { return 1; }
+		count: function() { return this.goal.days.length; }
 	});
 
 	return EditView;
