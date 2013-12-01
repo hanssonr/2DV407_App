@@ -1,35 +1,46 @@
 // Require config
 require.config({
-	baseUrl: "js/",
+	baseUrl: "assets/",
 	paths: {
-		"jquery": "libs/jquery-2.0.3.min",
-		"backbone": "libs/backbone",
-		"backbone.localStorage": "libs/backbone.localStorage",
-		"backbone-validation": "libs/backbone-validation-amd-min",
-		"bootstrap": "libs/bootstrap",
-		"mustache": "libs/mustache",
-		"underscore": "libs/underscore",
-		"router": "routers/router",
-		"indexview": "views/indexView",
-		"editview": "views/editView",
-		"addgoalview": "views/addGoalView",
-		"goalsview": "views/goalsView",
-		"goalview": "views/goalView",
-		"goal": "models/goal",
-		"goals": "collections/goals",
-		"jasmine": "libs/jasmine-1.3.1/jasmine",
-		"jasmine-html": "libs/jasmine-1.3.1/jasmine-html",
-		"spec": "spec/"
+		"text": "js/libs/text",
+		"jquery": "js/libs/jquery-2.0.3.min",
+		"purebackbone": "js/libs/backbone/backbone.dev",
+		"backbone.localStorage": "js/libs/backbone/backbone.localStorage",
+		"backbone-validation": "js/libs/backbone/backbone-validation-min",
+		"backbone.rel": "js/libs/backbone/backbone.rel",
+		"backbone": "js/libs/backbone/backbone",
+		"bootstrap": "js/libs/bootstrap",
+		"mustache": "js/libs/mustache",
+		"underscore": "js/libs/underscore",
+		"router": "js/routers/router",
+		"indexview": "js/views/indexView",
+		"editview": "js/views/editView",
+		"addgoalview": "js/views/addGoalView",
+		"goalsview": "js/views/goalsView",
+		"goalview": "js/views/goalView",
+		"goal": "js/models/goal",
+		"goals": "js/collections/goals",
+		"day": "js/models/day",
+		"days": "js/collections/days",
+		"daysview": "js/views/daysView",
+		"dayview": "js/views/dayView",
+		"jasmine": "js/libs/jasmine-1.3.1/jasmine",
+		"jasmine-html": "js/libs/jasmine-1.3.1/jasmine-html",
+		"spec": "js/spec/"
 	},
 
 	shim: {
 		"underscore": {
 			exports: "_"
 		},
-		"backbone": {
+		"purebackbone": {
 			deps: ["underscore", "jquery"],
 			exports: "Backbone"
 		},
+		"backbone.localStorage": ["purebackbone", "underscore"],
+		"backbone-validation": ["purebackbone", "underscore"],
+		"backbone.rel": ["purebackbone", "underscore"],
+
 		"jasmine": {
 			exports: "jasmine"
 		},
